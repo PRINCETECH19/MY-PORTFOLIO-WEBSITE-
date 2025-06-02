@@ -72,7 +72,7 @@ Feel free to fork the repo and submit a pull request.
 
 ## 📬 Contact
 
-If you have any questions or suggestions, feel free to reach out via [LinkedIn](#) or open an issue in this repository.
+If you have any questions or suggestions, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/pk-driller-ab54a6347) or open an issue in this repository.
 
 ---
 
