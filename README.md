@@ -1,6 +1,6 @@
 # MY PORTFOLIO WEBSITE
 
-[![Star](https://img.shields.io/github/stars/Pkdriller/MY-PORTFOLIO-WEBSITE-?style=social)](https://github.com/Pkdriller/MY-PORTFOLIO-WEBSITE-/stargazers)
+[![Star](.https://github.com/Pkdriller/MY-PORTFOLIO-WEBSITE-?style=social)](https://github.com/Pkdriller/MY-PORTFOLIO-WEBSITE-/stargazers)
 [![Fork](https://img.shields.io/github/forks/Pkdriller/MY-PORTFOLIO-WEBSITE-?style=social)](https://github.com/Pkdriller/MY-PORTFOLIO-WEBSITE-/fork)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Pkdriller/MY-PORTFOLIO-WEBSITE-)
 
