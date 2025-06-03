@@ -1,145 +1,224 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HELLO, WORLD!</title>
+    <title>Hello, World!</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-      <h1 class="title">HELLO WORLD🌎! </h1>
+      <h1 class="title">Hello World! </h1>
       <p id="currentTime"></p>
       <script src="script.js"></script>
-          
-    <div id="music-player">
-      <audio controls autoplay loop>
-          <source src="https://files.catbox.moe/93z21l.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-      </audio>
-    </div>
   </body>
 </html><!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PK DRILLER</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Contact Pkdriller - Professional Developer</title>
+  <meta name="description" content="Get in touch with Pkdriller, a professional developer. Share your project details, upload files, and start a conversation directly on WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      background: #191654;
+    }
     body {
-      background-color: #000000;
-      color: #00ff00;
-      font-family: 'Courier New', monospace;
-      padding: 2rem;
-      line-height: 1.6;
+      min-height: 100vh;
+      position: relative;
     }
-
-    .terminal {
-      border: 1px solid #00ff00;
-      padding: 2rem;
-      background-color: #111;
-      box-shadow: 0 0 15px #00ff00;
-      max-width: 900px;
-      margin: auto;
+    /* Stylish animated gradient background */
+    .bg-animated {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -2;
+      background: linear-gradient(-45deg, #ff512f, #f09819, #1fd1f9, #a8ff78, #f953c6, #b91d73);
+      background-size: 400% 400%;
+      animation: gradientMove 16s ease infinite;
     }
-
-    .title {
-      font-size: 1.8rem;
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    /* Glassmorphism card */
+    .container {
+      max-width: 450px;
+      margin: 5vh auto 0 auto;
+      background: rgba(27,28,56,0.80);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem 2rem 2rem 2rem;
+      border: 1.5px solid rgba(255,255,255,0.18);
+      position: relative;
+      z-index: 2;
+    }
+    .container h1 {
+      text-align: center;
+      margin-bottom: 0.5em;
+      font-size: 2.1em;
+    }
+    .container p {
+      text-align: center;
+      font-size: 1.08em;
+      color: #e0e0e0;
+      margin-bottom: 2em;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1em;
+    }
+    label {
+      font-weight: 700;
+      margin-bottom: 0.25em;
+      color: #fff;
+    }
+    input, textarea, select {
+      border: none;
+      border-radius: 8px;
+      padding: 0.8em 1em;
+      font-size: 1em;
+      outline: none;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      margin-bottom: 0.3em;
+      transition: background 0.2s;
+    }
+    input:focus, textarea:focus, select:focus {
+      background: rgba(255,255,255,0.25);
+    }
+    input[type="file"] {
+      padding: 0.5em 0;
+      background: transparent;
+      color: #fff;
+    }
+    ::file-selector-button {
+      background: #ff512f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em 1em;
+      cursor: pointer;
+    }
+    button, .whatsapp-link {
+      background: linear-gradient(90deg, #ff512f 0%, #f09819 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 1em;
+      font-size: 1.1em;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 0.5em;
+      box-shadow: 0 4px 20px rgba(255, 81, 47, 0.25);
+      transition: background 0.2s, transform 0.15s;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+    button:hover, .whatsapp-link:hover {
+      background: linear-gradient(90deg, #1fd1f9 0%, #b91d73 100%);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .whatsapp-link {
+      margin: 1.2em auto 0 auto;
+      width: 100%;
+    }
+    .success-msg, .error-msg {
+      text-align: center;
+      margin-top: 1em;
       font-weight: bold;
-      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      padding: 0.7em 1em;
     }
-
-    .tool {
-      margin-bottom: 1.5rem;
+    .success-msg { background: #a8ff78; color: #191654; }
+    .error-msg { background: #f953c6; color: #fff; }
+    .required {
+      color: #ffb347;
     }
-
-    .tool-name {
-      color: #00ffaa;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    .blink {
-      animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
-    code {
-      background-color: #ffffff;
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: #00ffff;
+    @media (max-width: 600px) {
+      .container { max-width: 98vw; padding: 1.2rem 0.5rem; }
+      .container h1 { font-size: 1.3em; }
     }
   </style>
 </head>
 <body>
-  <heading>💙𝑴𝒀 𝑷𝑶𝑹𝑻𝑭𝑶𝑳𝑰𝑶 💚</heading>
-
-  <p class="text-slate-600 max-w-xl mx-auto">
-      <subtitle>𝘼𝘽𝙊𝙐𝙏 𝙈𝙀 </subtitle>
-    ꧁༒☠💥✨🌍 𝘽𝙖𝙨𝙚𝙙 𝙞𝙣 𝙉𝙖𝙞𝙧𝙤𝙗𝙞, 𝙆𝙚𝙣𝙮𝙖       💻 𝙇𝙖𝙣𝙜𝙪𝙖𝙜𝙚𝙨: 𝙅𝙖𝙫𝙖𝙎𝙘𝙧𝙞𝙥𝙩, 𝙋𝙮𝙩𝙝𝙤𝙣, 𝘾#, 𝙖𝙣𝙙 𝙅𝙖𝙫𝙖       ⚙️ 𝙁𝙧𝙖𝙢𝙚𝙬𝙤𝙧𝙠𝙨: 𝙍𝙚𝙖𝙘𝙩, 𝙉𝙤𝙙𝙚.𝙟𝙨, 𝘿𝙟𝙖𝙣𝙜𝙤, 𝙇𝙖𝙧𝙖𝙫𝙚𝙡       📚 𝘾𝙪𝙧𝙧𝙚𝙣𝙩𝙡𝙮 𝙚𝙭𝙥𝙡𝙤𝙧𝙞𝙣𝙜: 𝘼𝙄, 𝘾𝙡𝙤𝙪𝙙 𝘾𝙤𝙢𝙥𝙪𝙩𝙞𝙣𝙜, 𝙖𝙣𝙙 𝘿𝙚𝙫𝙊𝙥𝙨       🛠️ 𝙄 𝙚𝙣𝙟𝙤𝙮 𝙗𝙪𝙞𝙡𝙙𝙞𝙣𝙜 𝙬𝙚𝙗 𝙖𝙥𝙥𝙨, 𝙖𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙤𝙣𝙨, 𝙖𝙣𝙙 𝘼𝙋𝙄𝙨       👨‍💻 𝙄 𝙫𝙖𝙡𝙪𝙚 𝙘𝙡𝙚𝙖𝙣 𝙘𝙤𝙙𝙚, 𝙤𝙥𝙚𝙣 𝙨𝙤𝙪𝙧𝙘𝙚, 𝙖𝙣𝙙 𝙩𝙚𝙖𝙢𝙬𝙤𝙧𝙠       🎯 𝘼𝙡𝙬𝙖𝙮𝙨 𝙚𝙖𝙜𝙚𝙧 𝙩𝙤 𝙡𝙚𝙖𝙧𝙣 𝙣𝙚𝙬 𝙩𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙞𝙚𝙨 𝙖𝙣𝙙 𝙩𝙖𝙠𝙚 𝙤𝙣 𝙣𝙚𝙬 𝙘𝙝𝙖𝙡𝙡𝙚𝙣𝙜𝙚𝙨       🌱 𝙒𝙝𝙚𝙣 𝙄'𝙢 𝙣𝙤𝙩 𝙘𝙤𝙙𝙞𝙣𝙜, 𝙮𝙤𝙪’𝙡𝙡 𝙛𝙞𝙣𝙙 𝙢𝙚 𝙧𝙚𝙖𝙙𝙞𝙣𝙜 𝙩𝙚𝙘𝙝 𝙗𝙡𝙤𝙜𝙨, 𝙜𝙖𝙢𝙞𝙣𝙜, 𝙤𝙧 𝙚𝙭𝙥𝙡𝙤𝙧𝙞𝙣𝙜 𝙩𝙝𝙚 𝙤𝙪𝙩𝙙𝙤𝙤𝙧𝙨</𝙡𝙞>            𝙈𝙮 𝙜𝙤𝙖𝙡 𝙞𝙨 𝙩𝙤 𝙜𝙧𝙤𝙬 𝙖𝙨 𝙖 𝙙𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧, 𝙘𝙤𝙣𝙩𝙧𝙞𝙗𝙪𝙩𝙚 𝙩𝙤 𝙩𝙝𝙚 𝙩𝙚𝙘𝙝 𝙘𝙤𝙢𝙢𝙪𝙣𝙞𝙩𝙮, 𝙖𝙣𝙙 𝙘𝙧𝙚𝙖𝙩𝙚 𝙨𝙤𝙛𝙩𝙬𝙖𝙧𝙚 𝙩𝙝𝙖𝙩 𝙞𝙢𝙥𝙧𝙤𝙫𝙚𝙨 𝙡𝙞𝙫𝙚𝙨. 𝙄𝙛 𝙮𝙤𝙪’𝙙 𝙡𝙞𝙠𝙚 𝙩𝙤 𝙘𝙤𝙡𝙡𝙖𝙗𝙤𝙧𝙖𝙩𝙚 𝙤𝙧 𝙟𝙪𝙨𝙩 𝙨𝙖𝙮 𝙝𝙞, 𝙛𝙚𝙚𝙡 𝙛𝙧𝙚𝙚 𝙩𝙤 𝙘𝙤𝙣𝙣𝙚𝙘𝙩 𝙬𝙞𝙩𝙝 𝙢𝙚!     ✨💥☠༒꧂
-
+  <div class="bg-animated"></div>
+  <div class="container">
+    <h1>Contact Pkdriller</h1>
+    <p>
+      Developer | Software Solutions | Professional Support<br>
+      Fill in your details and attach your files to get started.<br>
+      <strong>All fields are required.</strong>
     </p>
-</div>
-
-  <section id="skills">
-  <h2>My Skills</h2>
-  <div class="skills-list">
-    <div class="skill">
-      <span>𝙃𝙏𝙈𝙇</span>
-      <div class="bar"><div class="progress" style="width: 90%"></div></div>
-    </div>
-    <div class="skill">
-      <span>𝘾𝙎𝙎</span>
-      <div class="bar"><div class="progress" style="width: 85%"></div></div>
-    </div>
-    <div class="skill">
-      <span>𝙅𝙖𝙫𝙖𝙎𝙘𝙧𝙞𝙥𝙩</span>
-      <div class="bar"><div class="progress" style="width: 80%"></div></div>
-    </div>
-    <div class="skill">
-      <span>𝙍𝙚𝙖𝙘𝙩</span>
-      <div class="bar"><div class="progress" style="width: 75%"></div></div>
-    </div>
-    <div class="skill">
-      <span>𝙋𝙮𝙩𝙝𝙤𝙣</span>
-      <div class="bar"><div class="progress" style="width: 70%"></div></div>
-    </div>
+    <form id="contactForm" enctype="multipart/form-data" autocomplete="on">
+      <div>
+        <label for="name">Full Name <span class="required">*</span></label>
+        <input required type="text" id="name" name="name" placeholder="Enter your full name">
+      </div>
+      <div>
+        <label for="email">Email <span class="required">*</span></label>
+        <input required type="email" id="email" name="email" placeholder="your@email.com">
+      </div>
+      <div>
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <input required type="tel" id="phone" name="phone" placeholder="+2547XXXXXXXX">
+      </div>
+      <div>
+        <label for="details">How can I help you? <span class="required">*</span></label>
+        <textarea required id="details" name="details" rows="4" placeholder="Describe your project or request..."></textarea>
+      </div>
+      <div>
+        <label for="file">Upload File(s) <span class="required">*</span></label>
+        <input required type="file" id="file" name="file" multiple>
+      </div>
+      <button type="submit">Send via WhatsApp</button>
+    </form>
+    <a class="whatsapp-link" href="https://wa.me/254794146821" target="_blank" rel="noopener">
+      Or chat directly on WhatsApp
+    </a>
+    <div id="formMsg"></div>
   </div>
-  </section>
-<div class="portfolio-container">
-    <h1>CLICK BELOW BUTTON TO GET TO MY PROJECTS WEBSITE</h1>
-    <div class="project-buttons">
-      <a href="https://contact-pkdriller-xty1.vercel.app/" target="_blank"> WEBSITE </a>
-    </div>
-  </div>
-</body>
-</html>
+  <script>
+    // WhatsApp API sending (files not supported, so we show a message)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const details = document.getElementById('details').value.trim();
+      const files = document.getElementById('file').files;
+      const msgDiv = document.getElementById('formMsg');
 
+      // Simple validation
+      if (!name || !email || !phone || !details || files.length === 0) {
+        msgDiv.innerHTML = '<div class="error-msg">Please fill out all fields and upload at least one file.</div>';
+        return;
+      }
 
+      // Create WhatsApp message text
+      const msg = `Hello Pkdriller,%0AMy name is: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone)}%0ADetails: ${encodeURIComponent(details)}%0A[File(s) uploaded via form]`;
 
-<h1>CONTACT ME</h1>
-<div class="contact-links">
-  <a href="benardwachira49@gmail.com" target="_blank" title="Email">
-    <img src="https://img.icons8.com/ios-glyphs/30/000000/new-post.png" alt="Email" /> 𝐄𝐌𝐀𝐈𝐋
-  </a>
-  <a href="https://www.linkedin.com/in/pk-driller-ab54a6347" target="_blank" title="LinkedIn">
-    <img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin.png" alt="LinkedIn" /> 𝐋𝐈𝐍𝐊𝐄𝐃𝐈𝐍
-  </a>
-  <a href="https://github.com/Pkdriller" target="_blank" title="GitHub">
-    <img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" alt="GitHub" /> 𝐆𝐈𝐓𝐇𝐔𝐁
-  </a>
-  <a href="https://twitter.com/Pkdriller" target="_blank" title="Twitter">
-    <img src="https://img.icons8.com/ios-glyphs/30/000000/twitter--v1.png" alt="Twitter" /> 𝐓𝐖𝐈𝐓𝐓𝐄𝐑
-  </a>
-  <a href="https://wa.me/254794146821" target="_blank" title="Whatsapp">
-    <img src="https://img.icons8.com/ios-glyphs/30/000000/whatsapp.png" alt="WhatsApp" /> 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏
-  </a>
-  <a href="tel:+254785392165" title="𝐂𝐚𝐥𝐥 𝐌𝐞">
-    <img src="https://img.icons8.com/ios-glyphs/30/000000/phone.png" alt="Phone" /> 𝐂𝐀𝐋𝐋 𝐌𝐄
-  </a>
-</div>
-    <p>>𝙏𝙃𝘼𝙉𝙆𝙎 𝙁𝙊𝙍 𝙑𝙄𝙎𝙄𝙏𝙄𝙉𝙂  𝙈𝘼𝘿𝙀 𝘽𝙔 𝙋𝙆 𝘿𝙍𝙄𝙇𝙇𝙀𝙍 🚀.<span class="blink">_</span></p>
-  </div>
+      // Show note about file upload
+      msgDiv.innerHTML = '<div class="success-msg">Files cannot be sent directly via WhatsApp. After submitting, you will be redirected to WhatsApp with your details, and you can send the files as an email attachment.<br><br><strong>Email: pkdriller@gmail.com</strong></div>';
+
+      // After 1s, redirect to WhatsApp
+      setTimeout(() => {
+        window.open(`https://wa.me/254794146821?text=${msg}`, '_blank');
+      }, 1200);
+
+      // Reset form after sending
+      setTimeout(() => {
+        document.getElementById('contactForm').reset();
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
