@@ -27,7 +27,7 @@ This project showcases my skills, projects, and experience as a developer. It's 
 ## 📸 Screenshot
 
 <!-- Replace 'overview.png' with your screenshot file -->
-![Overview Screenshot](https://files.catbox.moe/0fpis3.jpg)
+![Overview Screenshot](https://files.catbox.moe/ea5rrx.jpg)
 
 ---
 
